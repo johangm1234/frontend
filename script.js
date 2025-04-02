@@ -18,3 +18,15 @@ document.addEventListener("DOMContentLoaded", function() {
         navLinks.classList.toggle("active");
     });
 });
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let request = document.getElementById("request").value;
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || request === "" || message === "") {
+        alert("Todos los campos son obligatorios.");
+        event.preventDefault(); 
+    }
+});
